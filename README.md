@@ -1,13 +1,22 @@
-# opencv_bazel
-Building OpenCV project with Bazel
+# OpenCV Bazel on Windows
+A sample OpenCV project built with Bazel on Windows
+
+* Acknowledgement to [@Kristina & Rick Smith](https://stackoverflow.com/a/35024014).
 
 # Dependencies
 
-* Requires Bazel (https://www.bazel.build/)
-* OpenCV 3.1
+* Bazel 0.23.0 or later (https://www.bazel.build/)
+* OpenCV 2.4.x or later (https://opencv.org/)
 
-# How to
+# Instructions
 
-* In the WORKSPACE file, change the path of the OpenCV to your system path. 
-* Build the project using `bazel build //main:main`
-* To run the demo file `bazel-bin/main/main /path/to/image`
+* Make sure OpenCV path is in your System Environment Variables.
+* In the WORKSPACE file, change the value of "path" to the OpenCV install path.
+* In the opencv.BUILD file, locate the OpenCV libraries in "srcs" according to your complier version:
+  * vc16 = Visual Studio 2019
+  * vc15 = Visual Studio 2017
+  * vc14 = Visual Studio 2015
+  * vc12 = Visual Studio 2013
+* Build the project: `bazel build //src:main`
+* To run the binary: `.\bazel-bin\src\main.exe`
+
