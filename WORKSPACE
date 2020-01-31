@@ -5,7 +5,7 @@ new_local_repository(
 )
 
 # Another example:
-# add library in Bazel, without creating BUILD file
+# add C libraries in Bazel, without creating *.BUILD file
 
 new_local_repository(
     name = "tensorflow_c_win",
