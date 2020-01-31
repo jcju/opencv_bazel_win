@@ -7,8 +7,8 @@ using namespace std;
 
 int main()
 {
-//  Mat image = imread( "..\\img\\Lena.png", 1 );
-    Mat image = imread(samples::findFile("Lena.jpg"), IMREAD_COLOR); // Read the file
+//  Mat image = imread( "..\\img\\Lena.png", 1 );                   // Bazel has difficulty loading relative path
+    Mat image = imread(samples::findFile("Lena.jpg"), IMREAD_COLOR); 
     if (!image.data)
     {
         printf("No image data \n");
